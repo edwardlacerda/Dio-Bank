@@ -10,8 +10,8 @@ const LoginPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você chamaria sua API de login
-    navigate('/home'); // redireciona para a HomePage
+    // futura chamada da API de login
+    navigate('/home'); // redireciona para a homepage
   };
 
   return (
