@@ -1,5 +1,7 @@
 import React from 'react';
 import type { ReactNode } from 'react';
+import Header from '../Layouts/Header';
+import Footer from '../Layouts/Footer';  
 
 interface Props {
   children: ReactNode;
@@ -8,9 +10,9 @@ interface Props {
 const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-primary text-white p-4 font-bold">Texto Header provisório</header>
+      <Header></Header>
       <main className="flex-1 p-4">{children}</main>
-      <footer className="bg-gray-200 text-center p-4 mt-auto">© 2025 Meu Site</footer>
+      <Footer></Footer>
     </div>
   );
 };

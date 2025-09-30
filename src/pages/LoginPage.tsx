@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Button from '../components/Button';
+import Input from '../components/Input';
+import Footer from '../Layouts/Footer';
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -14,35 +16,36 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-neutral-900">
       
+      <h1 className="text-7xl text-white font-bold m-10">Dio Bank</h1>
       <form
         onSubmit={handleSubmit}
-        className="bg-grey-900 p-8 rounded-x1 shadow-md w-full max-w-sm text-white"
+        className="p-8 m-5 max-w-sm text-white rounded-lg shadow-lg bg-purple-700/50 backdrop-blur-md"
       >
          <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
 
         <label className="block mb-2">Email</label>
-    <input
+    <Input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Digite seu email"
-          className="w-full px-3 py-2 mb-4 rounded bg-gray-800 border border-gray-700 text-white"
         />
         <label className="block mb-2">Senha</label>
-        <input
+        <Input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Digite sua senha"
-          className="w-full px-3 py-2 mb-4 rounded bg-gray-800 border border-gray-700 text-white"
         />
-        <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
-          Entrar
-        </button>
+        <Button disabled={!email || !password} type="submit" className="mb-5">Entrar</Button>
       </form>
+
+       <Footer></Footer>
+     
     </div>
+    
   );
 };
 
