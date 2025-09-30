@@ -1,2 +1,2 @@
-# Projeto React + TypeScript + Tailwind CSS
+# Projeto React + TypeScript + Tailwind CSS + Docker
 
